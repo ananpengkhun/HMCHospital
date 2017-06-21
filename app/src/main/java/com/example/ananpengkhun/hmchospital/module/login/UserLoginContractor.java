@@ -15,5 +15,6 @@ public class UserLoginContractor {
     public interface View extends BaseView<UserLoginContractor.UserLoginPresenter>{
         void navigateToPatient();
         void navigateToDoctor();
+        void navigateToNurse();
     }
 }

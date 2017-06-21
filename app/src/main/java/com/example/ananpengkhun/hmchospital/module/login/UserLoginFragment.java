@@ -93,4 +93,9 @@ public class UserLoginFragment extends HMCBaseFragment implements UserLoginContr
     public void navigateToDoctor() {
         activity.navigateToDoctor();
     }
+
+    @Override
+    public void navigateToNurse() {
+        activity.navigateToNurse();
+    }
 }

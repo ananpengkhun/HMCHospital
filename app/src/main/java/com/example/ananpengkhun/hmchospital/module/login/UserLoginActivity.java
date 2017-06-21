@@ -9,6 +9,7 @@ import com.example.ananpengkhun.hmchospital.R;
 import com.example.ananpengkhun.hmchospital.common.HMCBaseActivity;
 import com.example.ananpengkhun.hmchospital.module.doctor.DoctorActivity;
 import com.example.ananpengkhun.hmchospital.module.main.MainActivity;
+import com.example.ananpengkhun.hmchospital.module.nurse.NurseActivity;
 import com.example.ananpengkhun.hmchospital.module.patient.PatientActivity;
 
 import butterknife.BindView;
@@ -56,6 +57,13 @@ public class UserLoginActivity extends HMCBaseActivity implements UserLoginContr
     @Override
     public void navigateToDoctor() {
         Intent intent = new Intent(UserLoginActivity.this, DoctorActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    @Override
+    public void navigateToNurse() {
+        Intent intent = new Intent(UserLoginActivity.this, NurseActivity.class);
         startActivity(intent);
         finish();
     }
