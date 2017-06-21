@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "806551346386",
+    "firebase_url": "https://hmchospital-df33c.firebaseio.com",
+    "project_id": "hmchospital-df33c",
+    "storage_bucket": "hmchospital-df33c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:806551346386:android:956b6c2a2294c748",
+        "android_client_info": {
+          "package_name": "com.example.ananpengkhun.hmchospital"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "806551346386-hds28q2r03o4fo4ihp2fon8lhtframqo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsatkA-MObgbGUyZKrBsB2vu0vtVmdz-o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
