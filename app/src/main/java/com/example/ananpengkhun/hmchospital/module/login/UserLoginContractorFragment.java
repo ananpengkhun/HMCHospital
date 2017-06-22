@@ -17,5 +17,6 @@ public class UserLoginContractorFragment {
         void navigateToPatient();
         void navigateToDoctor();
         void navigateToNurse();
+        void navigateToReception();
     }
 }

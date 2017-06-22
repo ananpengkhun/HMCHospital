@@ -63,13 +63,10 @@ public class UserLoginFragment extends HMCBaseFragment implements UserLoginContr
         this.presenterFragment = presenter;
     }
 
-    private View.OnClickListener onSubmitlistener = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
+    private View.OnClickListener onSubmitlistener = (view) ->{
             presenterFragment.checkUserLogin(
                     edUsername.getText().toString(),
                     edPassword.getText().toString());
-        }
     };
 
     public static Fragment newInstant() {
@@ -97,5 +94,10 @@ public class UserLoginFragment extends HMCBaseFragment implements UserLoginContr
     @Override
     public void navigateToNurse() {
         activity.navigateToNurse();
+    }
+
+    @Override
+    public void navigateToReception() {
+        activity.navigateToReception();
     }
 }

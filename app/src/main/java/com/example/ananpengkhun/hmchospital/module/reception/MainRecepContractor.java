@@ -1,0 +1,18 @@
+package com.example.ananpengkhun.hmchospital.module.reception;
+
+import com.example.ananpengkhun.hmchospital.common.BasePresent;
+import com.example.ananpengkhun.hmchospital.common.BaseView;
+
+/**
+ * Created by ananpengkhun on 6/22/17.
+ */
+
+public class MainRecepContractor {
+    public interface MainRecepPresenter extends BasePresent{
+
+    }
+
+    public interface View extends BaseView<MainRecepContractor.MainRecepPresenter>{
+
+    }
+}

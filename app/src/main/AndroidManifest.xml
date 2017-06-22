@@ -7,10 +7,6 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
-    <uses-feature
-        android:name="android.hardware.bluetooth_le"
-        android:required="true"/>
-
     <application
         android:name=".application.HMCHospitalApplication"
         android:allowBackup="true"
@@ -45,6 +41,8 @@
         <activity android:name=".module.patient.PatientActivity">
         </activity>
         <activity android:name=".module.nurse.NurseActivity">
+        </activity>
+        <activity android:name=".module.reception.ReceptionActivity">
         </activity>
     </application>
 

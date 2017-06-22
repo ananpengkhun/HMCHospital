@@ -11,6 +11,8 @@ import com.example.ananpengkhun.hmchospital.module.doctor.DoctorActivity;
 import com.example.ananpengkhun.hmchospital.module.main.MainActivity;
 import com.example.ananpengkhun.hmchospital.module.nurse.NurseActivity;
 import com.example.ananpengkhun.hmchospital.module.patient.PatientActivity;
+import com.example.ananpengkhun.hmchospital.module.reception.ReceptionActivity;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -64,6 +66,13 @@ public class UserLoginActivity extends HMCBaseActivity implements UserLoginContr
     @Override
     public void navigateToNurse() {
         Intent intent = new Intent(UserLoginActivity.this, NurseActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    @Override
+    public void navigateToReception() {
+        Intent intent = new Intent(UserLoginActivity.this, ReceptionActivity.class);
         startActivity(intent);
         finish();
     }

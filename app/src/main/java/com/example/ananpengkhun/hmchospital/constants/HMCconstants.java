@@ -6,6 +6,10 @@ package com.example.ananpengkhun.hmchospital.constants;
 
 public class HMCconstants {
     public static final int REQUEST_COARSE_LOCATION = 99;
+    public static final String TOPIC_PATIENT = "patient";
+    public static final String TOPIC_DOCTOR = "doctor";
+    public static final String TOPIC_NURSE = "nurse";
+    public static final String TOPIC_RECEPTION = "reception";
     public static final String[] USERNAME = {
             "patient",
             "doctor",

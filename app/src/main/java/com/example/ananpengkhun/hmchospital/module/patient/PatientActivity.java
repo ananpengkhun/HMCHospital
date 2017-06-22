@@ -5,6 +5,8 @@ import android.widget.FrameLayout;
 
 import com.example.ananpengkhun.hmchospital.R;
 import com.example.ananpengkhun.hmchospital.common.HMCBaseActivity;
+import com.example.ananpengkhun.hmchospital.constants.HMCconstants;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,6 +27,7 @@ public class PatientActivity extends HMCBaseActivity implements PatientContracto
     }
 
     private void init() {
+        FirebaseMessaging.getInstance().subscribeToTopic(HMCconstants.TOPIC_PATIENT);
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(contentContainer.getId(),MainPatientFragment.newInstant(),"MainPatientFragment")
@@ -35,5 +38,11 @@ public class PatientActivity extends HMCBaseActivity implements PatientContracto
     @Override
     public void setPresenter(PatientContractor.PatientPresenter presenter) {
         this.presenter = presenter;
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        FirebaseMessaging.getInstance().unsubscribeFromTopic(HMCconstants.TOPIC_PATIENT);
     }
 }

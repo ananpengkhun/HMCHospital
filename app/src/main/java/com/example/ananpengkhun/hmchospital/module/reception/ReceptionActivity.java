@@ -1,7 +1,6 @@
-package com.example.ananpengkhun.hmchospital.module.doctor;
+package com.example.ananpengkhun.hmchospital.module.reception;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.FrameLayout;
 
 import com.example.ananpengkhun.hmchospital.R;
@@ -12,37 +11,37 @@ import com.google.firebase.messaging.FirebaseMessaging;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class DoctorActivity extends HMCBaseActivity implements DoctorContractor.View {
+public class ReceptionActivity extends HMCBaseActivity implements ReceptionContractor.View {
 
     @BindView(R.id.content_container) FrameLayout contentContainer;
-    private DoctorContractor.DoctorPresenter presenter;
+    private ReceptionContractor.ReceptionPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doctor);
+        setContentView(R.layout.activity_reception);
         ButterKnife.bind(this);
-        presenter = new DoctorPresenter(this, DoctorActivity.this);
+        presenter = new ReceptionPresenter(this, ReceptionActivity.this);
         init();
     }
 
     private void init() {
-        FirebaseMessaging.getInstance().subscribeToTopic(HMCconstants.TOPIC_DOCTOR);
+        FirebaseMessaging.getInstance().subscribeToTopic(HMCconstants.TOPIC_RECEPTION);
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(contentContainer.getId(),MainDoctorFragment.newInstant(),"MainDoctorFragment")
+                .replace(contentContainer.getId(),MainRecepFragment.newInstant(),"MainRecepFragment")
                 .addToBackStack(null)
                 .commit();
     }
 
     @Override
-    public void setPresenter(DoctorContractor.DoctorPresenter presenter) {
+    public void setPresenter(ReceptionContractor.ReceptionPresenter presenter) {
         this.presenter = presenter;
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        FirebaseMessaging.getInstance().unsubscribeFromTopic(HMCconstants.TOPIC_DOCTOR);
+        FirebaseMessaging.getInstance().unsubscribeFromTopic(HMCconstants.TOPIC_RECEPTION);
     }
 }
