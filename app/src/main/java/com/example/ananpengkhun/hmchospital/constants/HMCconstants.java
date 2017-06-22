@@ -13,9 +13,11 @@ public class HMCconstants {
     public static final String[] USERNAME = {
             "patient",
             "doctor",
-            "nurse"
+            "nurse",
+            "reception"
     };
     public static final String[] PASSWORD = {
+            "1111",
             "1111",
             "1111",
             "1111"
@@ -23,7 +25,8 @@ public class HMCconstants {
     public static final int[] TYPE = {
             1,
             2,
-            3
+            3,
+            4
     };
 
 }

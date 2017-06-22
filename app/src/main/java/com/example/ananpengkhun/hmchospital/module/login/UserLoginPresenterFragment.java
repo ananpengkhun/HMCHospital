@@ -35,6 +35,8 @@ public class UserLoginPresenterFragment implements UserLoginContractorFragment.U
                         view.navigateToDoctor();
                     }else if(3 == type){
                         view.navigateToNurse();
+                    }else if(4 == type){
+                        view.navigateToReception();
                     }
                 } else {
                     //login fail

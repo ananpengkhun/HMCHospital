@@ -38,11 +38,13 @@
 
         <activity android:name=".module.doctor.DoctorActivity">
         </activity>
-        <activity android:name=".module.patient.PatientActivity">
+        <activity android:name=".module.patient.PatientActivity"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity android:name=".module.nurse.NurseActivity">
         </activity>
-        <activity android:name=".module.reception.ReceptionActivity">
+        <activity android:name=".module.reception.ReceptionActivity"
+                  android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
 
