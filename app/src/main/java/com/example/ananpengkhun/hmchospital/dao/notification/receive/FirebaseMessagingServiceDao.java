@@ -10,9 +10,15 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.media.RingtoneManager;
 import android.support.v4.app.NotificationCompat;
+import android.util.Log;
 
 import com.example.ananpengkhun.hmchospital.R;
+import com.example.ananpengkhun.hmchospital.constants.HMCconstants;
+import com.example.ananpengkhun.hmchospital.module.doctor.DoctorActivity;
 import com.example.ananpengkhun.hmchospital.module.main.MainActivity;
+import com.example.ananpengkhun.hmchospital.module.nurse.NurseActivity;
+import com.example.ananpengkhun.hmchospital.module.patient.PatientActivity;
+import com.example.ananpengkhun.hmchospital.module.reception.ReceptionActivity;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
@@ -38,8 +44,22 @@ public class FirebaseMessagingServiceDao extends FirebaseMessagingService {
     private void sendNotification(RemoteMessage.Notification notification, Map<String, String> data) {
         Bitmap icon = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
 
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        for (Map.Entry entry : data.entrySet()) {
+            Log.d("data", entry.getKey() + ", " + entry.getValue());
+        }
+
+        Intent intent = new Intent();
+        int user_type = Integer.parseInt(data.get("user_type"));
+        if(1 == user_type){
+            intent.setClass(this,PatientActivity.class);
+        }else if(2 == user_type){
+            intent.setClass(this,DoctorActivity.class);
+        }else if(3 == user_type){
+            intent.setClass(this,NurseActivity.class);
+        }else if(4 == user_type){
+            intent.setClass(this,ReceptionActivity.class);
+        }
+        intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
 
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)

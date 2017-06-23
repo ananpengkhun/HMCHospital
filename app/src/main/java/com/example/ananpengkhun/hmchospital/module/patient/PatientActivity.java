@@ -2,12 +2,14 @@ package com.example.ananpengkhun.hmchospital.module.patient;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.example.ananpengkhun.hmchospital.R;
 import com.example.ananpengkhun.hmchospital.common.HMCBaseActivity;
 import com.example.ananpengkhun.hmchospital.constants.HMCconstants;
+import com.example.ananpengkhun.hmchospital.dialog.HMCDialogFragment$DialogSuccessHolder_ViewBinding;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import butterknife.BindView;
@@ -27,6 +29,7 @@ public class PatientActivity extends HMCBaseActivity implements PatientContracto
         ButterKnife.bind(this);
         presenter = new PatientPresenter(this, PatientActivity.this);
         initSetup();
+        Log.d("patient", "onCreate: ");
         init();
 
     }
@@ -54,5 +57,6 @@ public class PatientActivity extends HMCBaseActivity implements PatientContracto
     protected void onDestroy() {
         super.onDestroy();
         FirebaseMessaging.getInstance().unsubscribeFromTopic(HMCconstants.TOPIC_PATIENT);
+        Log.d("patient", "onDestroy: ");
     }
 }

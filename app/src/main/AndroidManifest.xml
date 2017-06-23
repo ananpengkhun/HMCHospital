@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
           package="com.example.ananpengkhun.hmchospital">
 
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -15,10 +16,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".module.login.UserLoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
@@ -30,22 +31,47 @@
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
             </intent-filter>
         </service>
+
         <service android:name=".dao.notification.receive.FirebaseMessagingServiceDao">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
         </service>
 
-        <activity android:name=".module.doctor.DoctorActivity">
+        <activity android:name=".module.doctor.DoctorActivity"
+                  android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="OPEN_DoctorActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
+
         <activity android:name=".module.patient.PatientActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="OPEN_PatientActivity"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
-        <activity android:name=".module.nurse.NurseActivity">
+
+        <activity android:name=".module.nurse.NurseActivity"
+                  android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="OPEN_NurseActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
+
         <activity android:name=".module.reception.ReceptionActivity"
-                  android:theme="@style/AppTheme.NoActionBar">
+                  android:theme="@style/AppTheme.NoActionBar"
+                  android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="OPEN_ReceptionActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

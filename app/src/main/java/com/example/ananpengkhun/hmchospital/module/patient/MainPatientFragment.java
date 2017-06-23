@@ -30,6 +30,7 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -111,6 +112,7 @@ public class MainPatientFragment extends HMCBaseFragment implements MainPatientC
 
     private View.OnClickListener onSaveClicklistener  = view -> {
         //on send data to firebase
+        presenter.pushNotify();
     };
 
     private DatePickerDialog.OnDateSetListener onDateSetListener = new DatePickerDialog.OnDateSetListener() {

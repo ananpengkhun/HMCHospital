@@ -12,6 +12,7 @@ import java.util.Calendar;
 public class MainPatientContractor {
     public interface MainPatientPresenter extends BasePresent{
         void setFormatDate(Calendar mCalendar);
+        void pushNotify();
     }
 
     public interface View extends BaseView<MainPatientContractor.MainPatientPresenter>{
