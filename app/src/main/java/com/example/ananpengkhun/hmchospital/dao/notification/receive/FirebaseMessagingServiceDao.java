@@ -45,6 +45,7 @@ public class FirebaseMessagingServiceDao extends FirebaseMessagingService {
         Bitmap icon = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
 
         for (Map.Entry entry : data.entrySet()) {
+            Log.d("data", "sendNotification: make a smile");
             Log.d("data", entry.getKey() + ", " + entry.getValue());
         }
 
